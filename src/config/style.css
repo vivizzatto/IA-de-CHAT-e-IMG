@@ -1,0 +1,140 @@
+/* ========== FUNDO & ESTRUTURA ========== */
+html, body, .stApp {
+    background: url('https://www.ghibli.jp/gallery/chihiro043.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ========== CONTAINERS ========== */
+.block-container {
+    background-color: transparent !important;
+    padding: 1rem 1rem 0 !important;
+    max-width: 900px !important;
+}
+
+/* ========== AVATARS ========== */
+/* Container dos avatares */
+.stChatAvatar {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+
+/* Avatar do USUÁRIO */
+[data-testid="stChatMessage-user"] .stChatAvatar {
+    border: 3px solid #585da3 !important;
+    box-shadow: 0 0 10px rgba(88, 93, 163, 0.5);
+}
+
+/* Avatar do BOT */
+[data-testid="stChatMessage-assistant"] .stChatAvatar {
+    border: 3px solid #4CAF50 !important;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+/* ========== MENSAGENS ========== */
+[data-testid="stChatMessage"] {
+    max-width: 80%;
+    backdrop-filter: blur(5px);
+    border-radius: 15px !important;
+    padding: 12px !important;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mensagem do USUÁRIO */
+[data-testid="stChatMessage-user"] {
+    background-color: rgba(88, 93, 163, 0.7) !important;
+    margin-left: auto !important;
+    border-radius: 18px 18px 0 18px !important;
+}
+
+/* Mensagem do BOT */
+[data-testid="stChatMessage-assistant"] {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    margin-right: auto !important;
+    border-radius: 18px 18px 18px 0 !important;
+}
+
+/* Texto das mensagens */
+.stChatMessage .stMarkdown p,
+.stChatMessage .stMarkdown li {
+    color: white !important;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 8px 0;
+}
+
+/* ========== INPUT ========== */
+.stChatInputContainer {
+    background-color: transparent !important;
+    padding: 20px 0 !important;
+    margin-top: auto !important;
+}
+
+.stTextInput textarea {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border-radius: 20px !important;
+    border: 1px solid #585da3 !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+}
+
+.stTextInput textarea:focus {
+    border-color: #4CAF50 !important;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* ========== COMPONENTES GERAIS ========== */
+/* Logo */
+.stImage {
+    margin: 0 auto 1rem !important;
+    display: block;
+}
+
+/* Títulos */
+h1 {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+/* Selectbox */
+.stSelectbox select {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+}
+
+/* Botões */
+.stButton button {
+    background-color: #585da3 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    transition: all 0.3s;
+}
+
+.stButton button:hover {
+    background-color: #4CAF50 !important;
+    transform: translateY(-2px);
+}
+
+/* Efeitos de hover nos avatares */
+.stChatMessage:hover .stChatAvatar {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
